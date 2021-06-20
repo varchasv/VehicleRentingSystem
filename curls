@@ -1,0 +1,37 @@
+curl --location --request GET 'http://localhost:8080/vehicle/allVehicles' \
+--data-raw ''
+
+curl --location --request POST 'http://localhost:8080/vehicle/register' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "regNo":"CITY10",
+    "vehicleType":"CAR"
+}'
+
+curl --location --request POST 'http://localhost:8080/vehicle/booking' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "emailId":"abc@abc.com",
+    "vehicleType":"CAR",
+    "startTime":"2021-06-17T08:00:00.000Z",
+    "endTime":"2021-06-17T10:00:00.000Z"
+
+}'
+
+curl --location --request GET 'http://localhost:8080/vehicle/booking?id=4' \
+--data-raw ''
+
+curl --location --request GET 'http://localhost:8080/vehicle/booking/17/cost' \
+--data-raw ''
+
+curl --location --request GET 'http://localhost:8080/vehicle/locateVehicle?regNo=TVS15' \
+--data-raw ''
+
+curl --location --request GET 'http://localhost:8080/vehicle/rentedVehicles' \
+--data-raw ''
+
+curl --location --request GET 'http://localhost:8080/vehicle/availableVehicles?type=CAR&startTime=2021-06-17T08:00:01.000&endTime=2021-06-17T10:00:00.000' \
+--data-raw ''
+
+curl --location --request PUT 'http://localhost:8080/vehicle/booking/4/return' \
+--data-raw ''
